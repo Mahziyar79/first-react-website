@@ -1,7 +1,5 @@
 import ServicesBanner from "../components/ServicesBanner";
-import card2 from "../assets/images/card2.jpg";
 import serviceCard from "../assets/images/service-card.png";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Services = () => {
