@@ -35,15 +35,14 @@
   .footer-form {
     width: 80%;
   }
-  .card {
-    width: 100%;
-  }
+  
   .title-cards-above {
     font-size: 0.9em;
     margin: 0 10px;
   }
-  .service{
-    width: 100% !important;
+  .product,.card,.service{
+    margin: 20px auto !important;
+    width: 70%;
   }
 }
 @media (max-width: 576px) {

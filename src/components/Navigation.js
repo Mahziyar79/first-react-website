@@ -1,23 +1,34 @@
 import { withRouter, NavLink, Link } from "react-router-dom";
 import logo from "../assets/images/white_logo.png";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaShoppingCart } from "react-icons/fa";
 import { useState } from "react";
+import CartProvider, { useCart } from "./Provider/CartProvider";
 
 const items = [
   { to: "/", name: "Home", exact: true },
   { to: "/services", name: "Services" },
+  { to: "/products", name: "Products" },
   { to: "/articles", name: "Articles" },
 ];
 const Navigation = (props) => {
   const [barShow, setBarShow] = useState(false);
+  const cartItemsNumber = useCart();
 
   return (
     <header className="nav">
-      <Link to="/">
-        <div className="site-logo">
-          <img alt="logo" src={logo} />
-        </div>
-      </Link>
+      <div className="logo-cart">
+        <Link to="/">
+          <div className="site-logo">
+            <img alt="logo" src={logo} />
+          </div>
+        </Link>
+        <Link to='/cart'>
+          <div className="cart">
+            <FaShoppingCart />
+            <span className="cart-count">{cartItemsNumber.length}</span>
+          </div>
+        </Link>
+      </div>
       <nav>
         <ul className={barShow ? "list-nav active-bar" : "list-nav"}>
           {items.map((item) => {

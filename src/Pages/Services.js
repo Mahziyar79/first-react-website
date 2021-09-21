@@ -1,12 +1,12 @@
 import ServicesBanner from "../components/ServicesBanner";
-import serviceCard from "../assets/images/service-card.png";
 import { Link } from "react-router-dom";
+import ServiceBox from "../components/ServiceBox";
+import { useEffect } from "react";
 
 const Services = () => {
-  let rows = [],
-    i = 0,
-    len = 8;
-  while (++i <= len) rows.push(i);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -18,22 +18,8 @@ const Services = () => {
           industry.
         </p>
       </div>
-      <div className="services-list">
-        {rows.map(() => {
-          return (
-            <div className="service">
-              <div className="service-icon">
-                <img alt="service-img" src={serviceCard} />
-              </div>
-              <div className="service-detail">
-                <h4 className="service-title">Lorem Ipsum is simply text</h4>
-                <p>Lorem Ipsum is simply dummy test text</p>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      <div className='service-btn'>
+      <ServiceBox count='8' />
+      <div className='home-btn'>
         <Link to="/">
           <button>Back to Home Page</button>
         </Link>

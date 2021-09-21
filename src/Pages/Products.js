@@ -1,14 +1,14 @@
-import ProductsBanner from "../components/ProductsBanner";
-import { cards } from "../data/cards";
-import Cards from "../components/Cards";
+import { useEffect } from "react";
+import AllProducts from "../components/Products/AllProducts";
+
 
 const Products = () => {
-  return (
-    <>
-      <ProductsBanner />
-      <Cards cards={cards} />
-    </>
-  );
-};
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+    return ( 
+        <AllProducts />
+     );
+}
+ 
 export default Products;
