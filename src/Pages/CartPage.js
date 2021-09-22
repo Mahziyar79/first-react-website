@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom";
-import { useCart } from "../components/Provider/CartProvider";
+import { useCart, useCartAction } from "../components/Provider/CartProvider";
+import { FaTrashAlt } from "react-icons/fa";
 
 const CartPage = () => {
-  const cartitems = useCart();
+  const cartItems = useCart();
+  const setCartItems = useCartAction();
+
+  const deleteCartItem = (id) => {
+    const filteredItems = cartItems.filter((item) => item.id !== id);
+    setCartItems(filteredItems);
+  };
+
   return (
     <div className="cart-page">
       <h1>Cart Page</h1>
@@ -12,16 +20,24 @@ const CartPage = () => {
           <th>Quantity</th>
           <th>Price</th>
         </tr>
-        {cartitems.map((item) => (
+        {cartItems.map((item) => (
           <tr>
             <td>
-              {item.title} ({item.category})
+              {item.title} (category : {item.category})
             </td>
             <td>1</td>
-            <td>{item.price}</td>
+            <td className="price-trash">
+              {item.price}
+              <FaTrashAlt onClick={() => deleteCartItem(item.id)} />
+            </td>
           </tr>
         ))}
       </table>
+      <div className="payment-btn">
+        <Link to="/">
+          <button>Payment</button>
+        </Link>
+      </div>
       <div className="home-btn">
         <Link to="/">
           <button>Back to Home Page</button>

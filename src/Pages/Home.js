@@ -4,14 +4,13 @@ import { cards } from "../data/cards";
 import ServiceBox from "../components/ServiceBox";
 import AllProducts from "../components/Products/AllProducts";
 import { useEffect } from "react";
-import CartProvider from "../components/Provider/CartProvider";
 
 const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <CartProvider>
+    <>
       <HomeBanner />
       <div className="service-info">
         <h1>Do you fancy visit our Services?!</h1>
@@ -23,7 +22,7 @@ const Home = () => {
       <ServiceBox count="4" />
       <Cards cards={cards} />
       <AllProducts />
-    </CartProvider>
+    </>
   );
 };
 
