@@ -7,17 +7,17 @@ const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
+    if (localStorage.getItem('cartItems')) {
     const retriveProducts = JSON.parse(localStorage.getItem('cartItems'));
     if (retriveProducts) setCartItems(retriveProducts);
+    }
   }, []);
 
   useEffect(() => {
-    if (cartItems?.length) {
-      // only store the state if products exists and it's length is greater than 0
       localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    }
   }, [cartItems]);
 
+  
 
   
   return (

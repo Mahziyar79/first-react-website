@@ -35,14 +35,24 @@
   .footer-form {
     width: 80%;
   }
-  
+
   .title-cards-above {
     font-size: 0.9em;
     margin: 0 10px;
   }
-  .product,.card,.service{
+  .product,
+  .card,
+  .service {
     margin: 20px auto !important;
     width: 70%;
+  }
+  .product-body-top {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+  .product-main-body,
+  .product-detail-body {
+    width: 81%;
   }
 }
 @media (max-width: 576px) {
@@ -53,6 +63,7 @@
   .social-footer {
     width: 100%;
     text-align: center;
+    margin-bottom: 10px;
   }
   .top-footer h2 {
     font-size: 1.2em !important;

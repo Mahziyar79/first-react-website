@@ -10,7 +10,7 @@ const ServiceBox = ({ count }) => {
     <div className="services-list">
       {rows.map(() => {
         return (
-          <div className="service">
+          <div className="service" key={Math.floor(Math.random()*1000)}>
             <div className="service-icon">
               <img alt="service-img" src={serviceCard} />
             </div>

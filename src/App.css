@@ -494,4 +494,9 @@ button.buy-btn:hover {
 	font-size: 1.1em;
 	color: #fff;
 	margin-top: 20px;
+  margin-bottom: 50px;
+}
+.empty-h2{
+  text-align: center;
+  margin: 50px 0;
 }
