@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { useCart, useCartAction } from "../components/Provider/CartProvider";
 import { FaTrashAlt } from "react-icons/fa";
 
+
 const CartPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
   const cartItems = useCart();
   const setCartItems = useCartAction();
 
@@ -17,6 +17,7 @@ const CartPage = () => {
   };
 
   return (
+    <>
     <div className="cart-page">
       <h1>Cart Page</h1>
       {cartItems.length === 0 ? (
@@ -57,6 +58,7 @@ const CartPage = () => {
         </>
       )}
     </div>
+    </>
   );
 };
 

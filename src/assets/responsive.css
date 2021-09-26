@@ -10,7 +10,7 @@
     width: 50%;
   }
   .main-banner h1 {
-    font-size: 1.6em !important;
+    font-size: 2.1em !important;
     text-align: center !important;
     padding: 0 10px !important;
   }
@@ -54,6 +54,13 @@
   .product-detail-body {
     width: 81%;
   }
+  #cart {
+    width: 96%;
+    margin: 0 auto;
+  }
+  .payment-btn button {
+    margin: 20px 0 50px 10px;
+  }
 }
 @media (max-width: 576px) {
   .footer-detail-img {
@@ -69,4 +76,7 @@
     font-size: 1.2em !important;
     padding: 0 20px !important;
   }
+  .main-banner .banner-btns button {
+    width: 37% !important;
+}
 }

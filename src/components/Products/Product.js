@@ -14,6 +14,10 @@ const Product = ({ product }) => {
           <AiOutlineClockCircle />
           <p>{product.time}</p>
         </div>
+        <div className="pro-price">
+          <AiOutlineClockCircle />
+          <p>{product.price}</p>
+        </div>
         <Link to={{ pathname: `/product/${product.id}`, state: { product } }}>
           <button className="pro-btn">More Information</button>
         </Link>

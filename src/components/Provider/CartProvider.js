@@ -7,19 +7,16 @@ const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
-    if (localStorage.getItem('cartItems')) {
-    const retriveProducts = JSON.parse(localStorage.getItem('cartItems'));
-    if (retriveProducts) setCartItems(retriveProducts);
+    if (localStorage.getItem("cartItems")) {
+      const retriveProducts = JSON.parse(localStorage.getItem("cartItems"));
+      if (retriveProducts) setCartItems(retriveProducts);
     }
   }, []);
 
   useEffect(() => {
-      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  
-
-  
   return (
     <CartItemContext.Provider value={cartItems}>
       <CartItemContextDispature.Provider value={setCartItems}>

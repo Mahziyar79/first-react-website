@@ -9,11 +9,15 @@ const AllProducts = () => {
         <div className="divider"></div>
       </div>
       <div className="products">
-        {products.map((product) => (
-          <div className="product" key={product.id}>
-            <Product product={product} />
-          </div>
-        ))}
+        {products ? (
+          products.map((product) => (
+            <div className="product" key={product.id}>
+              <Product product={product} />
+            </div>
+          ))
+        ) : (
+          <p>Loading...</p>
+        )}
       </div>
     </>
   );

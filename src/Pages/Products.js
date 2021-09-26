@@ -1,14 +1,32 @@
 import { useEffect } from "react";
-import AllProducts from "../components/Products/AllProducts";
-
+import AllProductsSearch from "../components/Products/AllProductsSearch";
+import { useState } from "react";
 
 const Products = () => {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-      }, []);
-    return ( 
-        <AllProducts />
-     );
-}
- 
+  const [search, setSearch] = useState("");
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const changeInputSearchHandler = (e) => {
+    setSearch(e.target.value);
+  };
+
+  return (
+    <>
+      <div className="search-product">
+        <input
+          type="text"
+          placeholder="search product..."
+          value={search}
+          onChange={changeInputSearchHandler}
+        ></input>
+      </div>
+      <AllProductsSearch search={search} />
+    </>
+  );
+};
+
 export default Products;
