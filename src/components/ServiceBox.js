@@ -7,21 +7,30 @@ const ServiceBox = ({ count }) => {
 
   while (++i <= count) rows.push(i);
   return (
-    <div className="services-list">
-      {rows.map(() => {
-        return (
-          <div className="service" key={Math.floor(Math.random()*1000)}>
-            <div className="service-icon">
-              <img alt="service-img" src={serviceCard} />
+    <>
+      <div className="service-info">
+        <h1>Do you fancy visit our Services?!</h1>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry.
+        </p>
+      </div>
+      <div className="services-list">
+        {rows.map(() => {
+          return (
+            <div className="service" key={Math.floor(Math.random() * 1000)}>
+              <div className="service-icon">
+                <img alt="service-img" src={serviceCard} />
+              </div>
+              <div className="service-detail">
+                <h4 className="service-title">Lorem Ipsum is simply text</h4>
+                <p>Lorem Ipsum is simply dummy test text</p>
+              </div>
             </div>
-            <div className="service-detail">
-              <h4 className="service-title">Lorem Ipsum is simply text</h4>
-              <p>Lorem Ipsum is simply dummy test text</p>
-            </div>
-          </div>
-        );
-      })}
-    </div>
+          );
+        })}
+      </div>
+    </>
   );
 };
 

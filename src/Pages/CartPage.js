@@ -8,6 +8,7 @@ const CartPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   const cartItems = useCart();
   const setCartItems = useCartAction();
 
@@ -44,12 +45,16 @@ const CartPage = () => {
                 </td>
                 <td>1</td>
                 <td className="price-trash">
-                  {item.price}
+                  {item.price} $
                   <FaTrashAlt onClick={() => deleteCartItem(item.id)} />
                 </td>
               </tr>
             ))}
           </table>
+          <div className='final-info-cart'>
+          <p>Total Items : {cartItems.length}</p>
+          <p>Total Price : {cartItems.reduce((all,acc) => {return all + parseInt(acc.price)},0)} $</p>
+          </div>
           <div className="payment-btn">
             <Link to="/">
               <button>Payment</button>

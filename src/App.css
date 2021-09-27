@@ -478,7 +478,7 @@ width: 100%;
   color: white;
 }
 .cart-page {
-  max-width: 1200px;
+  max-width: 1150px;
   margin: 0 auto;
 }
 .price-trash {
@@ -519,4 +519,17 @@ width: 100%;
 	border-radius: 3px;
   font-size: 1.1em;
   outline: none;
+}
+.final-info-cart {
+  border: 2px dashed blueviolet;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 10px;
+  background: #f7f7f7;
+}
+.css-nvf14r-ToastContainer {
+  top: 15% !important;
 }

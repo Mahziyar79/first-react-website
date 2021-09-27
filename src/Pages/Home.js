@@ -13,13 +13,6 @@ const Home = () => {
   return (
     <>
       <HomeBanner />
-      <div className="service-info">
-        <h1>Do you fancy visit our Services?!</h1>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry.
-        </p>
-      </div>
       <ServiceBox count="4" />
       <Cards cards={cards} />
       <AllProducts />

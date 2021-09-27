@@ -1,5 +1,5 @@
 import serviceCard from "../../assets/images/card3.jpg";
-import { AiOutlineClockCircle } from "react-icons/ai";
+import { AiOutlineClockCircle,AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
@@ -15,8 +15,8 @@ const Product = ({ product }) => {
           <p>{product.time}</p>
         </div>
         <div className="pro-price">
-          <AiOutlineClockCircle />
-          <p>{product.price}</p>
+          <AiOutlineShoppingCart />
+          <p>{product.price} $</p>
         </div>
         <Link to={{ pathname: `/product/${product.id}`, state: { product } }}>
           <button className="pro-btn">More Information</button>

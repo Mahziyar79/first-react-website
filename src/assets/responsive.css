@@ -61,6 +61,10 @@
   .payment-btn button {
     margin: 20px 0 50px 10px;
   }
+  .final-info-cart {
+    width: 50% !important;
+    margin-left: 8px !important;
+  }
 }
 @media (max-width: 576px) {
   .footer-detail-img {
