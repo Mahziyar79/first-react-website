@@ -6,11 +6,13 @@ import ArticlesPage from "./Pages/ArticlesPage";
 import ProductPage from "./Pages/ProductPage";
 import Products from "./Pages/Products";
 import CartPage from "./Pages/CartPage";
+import SignUp from "./Pages/SignUp";
 
 const routes = [
   { path: "/article/:id", component: ArticlesPage },
   { path: "/product/:id", component: ProductPage },
   { path: "/cart", component: CartPage },
+  { path: "/signup", component: SignUp },
   { path: "/services", component: Services },
   { path: "/products", component: Products },
   { path: "/articles", component: Articles },

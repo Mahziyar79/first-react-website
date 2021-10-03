@@ -2,7 +2,7 @@ import { withRouter, NavLink, Link } from "react-router-dom";
 import logo from "../assets/images/white_logo.png";
 import { FaBars, FaShoppingCart } from "react-icons/fa";
 import { useState } from "react";
-import CartProvider, { useCart } from "./Provider/CartProvider";
+import { useCart } from "./Provider/CartProvider";
 
 const items = [
   { to: "/", name: "Home", exact: true },
@@ -22,12 +22,17 @@ const Navigation = (props) => {
             <img alt="logo" src={logo} />
           </div>
         </Link>
-        <Link to='/cart'>
+        <Link to="/cart">
           <div className="cart">
             <FaShoppingCart />
             <span className="cart-count">{cartItemsNumber.length}</span>
           </div>
         </Link>
+        <div className="sign-up">
+          <Link to="/signup">
+            <button className="signup-btn">Sign Up</button>
+          </Link>
+        </div>
       </div>
       <nav>
         <ul className={barShow ? "list-nav active-bar" : "list-nav"}>
