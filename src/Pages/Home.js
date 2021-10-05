@@ -16,6 +16,7 @@ const Home = () => {
       <ServiceBox count="4" />
       <Cards cards={cards} />
       <AllProducts />
+      
     </>
   );
 };

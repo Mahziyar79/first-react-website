@@ -544,6 +544,11 @@ button.buy-btn:hover {
   color: #fff;
   border: 2px solid blueviolet;
   border-radius: 3px;
+  transition: all .3s ease-in-out;
+}
+.signup-btn:hover {
+color: #fff;
+background-color: blueviolet;
 }
 .form-signup {
   display: flex;
@@ -571,6 +576,7 @@ button.buy-btn:hover {
 }
 .error-field {
   color: red;
+  margin-top: 4px;
 }
 .form-signup button {
   padding: 8px 30px;
@@ -591,11 +597,16 @@ button.buy-btn:hover {
   cursor: not-allowed;
 }
 .signup-parent {
-  background-image: url("https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1274&q=80");
+  background-image: url("./assets/images/signup.jpg");
   background-size: cover;
   background-position: center;
   padding: 50px 0;
 }
 .form-signup h1 {
   margin: 0 0 20px 0;
+}
+.terms{
+  display: flex;
+  margin: 10px 0;
+  align-items: center;
 }
