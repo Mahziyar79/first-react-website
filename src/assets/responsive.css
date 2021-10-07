@@ -68,6 +68,16 @@
   .form-signup {
     width: 70% !important;
   }
+  .search-product {
+    text-align: center;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  .css-b62m3t-container,.search-product input {
+    margin: 0 auto;
+    margin-top: 20px;
+  }
 }
 @media (max-width: 576px) {
   .footer-detail-img {

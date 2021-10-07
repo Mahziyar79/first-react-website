@@ -512,8 +512,14 @@ button.buy-btn:hover {
 }
 /* button search */
 .search-product {
-  text-align: center;
-  margin-top: 40px;
+	text-align: center;
+	margin-top: 40px;
+	display: flex;
+	align-content: center;
+	justify-content: space-evenly;
+}
+.css-b62m3t-container {
+  width: 200px;
 }
 .search-product input {
   padding: 10px 15px;
