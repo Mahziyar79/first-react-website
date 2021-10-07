@@ -1,11 +1,11 @@
+
 import Product from "./Product";
 import { products } from "../../data/products";
 import { useState, useEffect } from "react";
+import _ from "lodash"
 
-const AllProductsSearch = ({ search, selectOption }) => {
-  const [searchData, setSearchData] = useState(products);
-  const [selectData, setSelectData] = useState(products);
-  const [selectSupport, setSelectSupport] = useState(selectData);
+const AllProductsSearch = ({ search, selectOption,selectPrice }) => {
+  const [selectSupport, setSelectSupport] = useState(products);
 
   useEffect(() => {
     if (selectOption !== "") {
@@ -24,14 +24,24 @@ const AllProductsSearch = ({ search, selectOption }) => {
   useEffect(() => {
     if (search !== "") {
       setSelectSupport(
-        selectData.filter((pro) =>
+        products.filter((pro) =>
           pro.title.toLowerCase().includes(search ? search.toLowerCase() : null)
         )
       );
     } else {
-      setSelectSupport(selectSupport);
+      setSelectSupport(products);
     }
   }, [search]);
+
+
+  useEffect(() => {
+    if(selectPrice==="Low"){
+      setSelectSupport( _.orderBy(products, ['price'],['asc']));
+   }else{
+      setSelectSupport( _.orderBy(products, ['price'],['desc']));
+   }
+  }, [selectPrice]);
+
 
   return (
     <>

@@ -1,6 +1,9 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import Input from "../common/Input";
+import {useEffect} from 'react';
+
+
 
 const initialValues = {
   name: "",
@@ -34,7 +37,13 @@ const validationSchema = Yup.object({
 });
 
 const SignUp = (props) => {
-  console.log(props);
+
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
   const formik = useFormik({
     initialValues,
     onSubmit: (values) => {

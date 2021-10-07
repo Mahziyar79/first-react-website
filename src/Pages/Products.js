@@ -10,9 +10,15 @@ const options = [
   { value: "Equipment", label: "Equipment" },
 ];
 
+const prices = [
+  { value: "Low", label: "Low to High" },
+  { value: "High", label: "High to Low" },
+];
+
 const Products = () => {
   const [search, setSearch] = useState("");
   const [selectOption, setSelectOption] = useState("");
+  const [selectPrice, setSelectPrice] = useState("");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -24,7 +30,9 @@ const Products = () => {
   const selectInputSearchHandler = (e) => {
     setSelectOption(e.value);
   };
-
+  const priceInputSearchHandler = (e) => {
+    setSelectPrice(e.value);
+  };
 
   return (
     <>
@@ -35,9 +43,16 @@ const Products = () => {
           value={search}
           onChange={changeInputSearchHandler}
         ></input>
-        <Select options={options} onChange={selectInputSearchHandler} />
+        <div className='select-input'>
+        <Select options={options} onChange={selectInputSearchHandler} placeholder= 'Category...'/>
+        <Select options={prices} onChange={priceInputSearchHandler} placeholder= 'Price...'/>
+        </div>
       </div>
-      <AllProductsSearch search={search} selectOption={selectOption}/>
+      <AllProductsSearch
+        search={search}
+        selectOption={selectOption}
+        selectPrice={selectPrice}
+      />
     </>
   );
 };
